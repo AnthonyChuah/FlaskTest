@@ -5,8 +5,12 @@ import time
 import threading
 from flask import Flask
 
-excluded = ["a0disallow", "test_getcmp"]
+excluded = ["test"]
 cwd = os.getcwd()
+# print(cwd)
+# foldermatch = re.findall("^.+\\\\(.+)$", cwd)
+# print(foldermatch[0])
+# runfolder = foldermatch[0]
 lst_regex = "^AERESGB.*\.lst"
 
 def SearchSubfolder(Subfolder):
@@ -60,7 +64,7 @@ def ConstructMultistring(ListSubfolders):
     # These names are already cleaned by SearchDir:
     # They contain only bona fide scenario folders.
     # Lists are MUTABLE types, treat this as "pass-by-reference".
-    string = "<p>This is a listing of all scenario folders for this model run.</p>\n"
+    string = "<p>This is a listing of all scenario folders for run: " + cwd + ".</p>\n"
     string += "<p>Scenario Folder Name, Present CM Loop, Latest Date Modified</p>\n"
     for element in ListSubfolders:
         # Now append to string each row corresponding to data.
@@ -71,7 +75,7 @@ app = Flask(__name__)
 @app.route("/")
 
 def main():
-    threading.Timer(5.0,main).start()
+    threading.Timer(60.0,main).start()
     listscenfolders = SearchDir()
     multistring = ConstructMultistring(listscenfolders)
     return(multistring)
