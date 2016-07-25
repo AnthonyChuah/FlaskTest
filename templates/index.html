@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AERESGB Sentinel - a web application for tracking and launching models</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div>
+  <h1>AERESGB Sentinel</h1>
+  <h4>A web application for tracking and launching models</h4>
+  <ul>
+    <li><a href="{{ url_for('tracker') }}">Track Models</a></li>
+    <li><a href="{{ url_for('launcher') }}">Launch Models</a></li>
+  </ul>
+  <br>
+  {% block body %}{% endblock %}
+</div>
+
+</body>
+
+</html>

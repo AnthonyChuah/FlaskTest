@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>AERESGB Web Launcher</h2>
+
+<div>
+<form action="{{ url_for('launchmodel') }}" method="post">
+<dl>
+{{ launcherhtml|safe }}
+<dd><input type="submit" value="Launch!">
+</dl>
+</form>
+</div>
+
+{% endblock %}

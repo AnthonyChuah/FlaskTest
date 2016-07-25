@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>AERESGB Web Launcher</h2>
+
+<div>
+<p>Your launch command string was: {{ command_string|safe }}</p>
+<p>Destroy! Your model has been launched. Please <a href="/">return</a> to the main menu.</p>
+</div>
+{% endblock %}

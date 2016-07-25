@@ -1,0 +1,63 @@
+{% extends "index.html" %}
+{% block body %}
+<h2>AERESGB Web Tracker</h2>
+<div>
+<table>
+	<tr>
+		<th>Scenario Folder Name</th>
+		<th>Present CM Loop</th>
+		<th>Latest Date Modified</th>
+	</tr>
+	<tr>
+		<td>a0</td>
+		<td>10 CM loops</td>
+		<td>2016/07/08 10:02:44 AM</td>
+	</tr>
+	<tr>
+		<td>a1</td>
+		<td>11 CM loops</td>
+		<td>2016/07/08 09:52:44 AM</td>
+	</tr>
+</table>
+</div>
+{% endblock %}
+
+<p>Scenario Folder Name, Present CM Loop, Latest Date Modified</p>
+a0_DKNLBE_NewDem, 10 CM loops, last modified 2016/07/08 10:02:44 AM<br>
+a0_DKNLBE_OldDem, 9 CM loops, last modified 2016/07/08 09:39:53 AM<br>
+a0_DKNLBE_SmooDem, 13 CM loops, last modified 2016/07/08 09:59:55 AM<br>
+a0_DK_NewDem, 12 CM loops, last modified 2016/07/08 09:57:47 AM<br>
+a0_DK_OldDem, 9 CM loops, last modified 2016/07/08 09:57:14 AM<br>
+a0_DK_SmooDem, 12 CM loops, last modified 2016/07/08 09:57:01 AM<br>
+a0_NewDem, 10 CM loops, last modified 2016/07/08 10:03:07 AM<br>
+a0_NLBE_NewDem, 9 CM loops, last modified 2016/07/08 10:02:29 AM<br>
+a0_NLBE_OldDem, 9 CM loops, last modified 2016/07/08 09:56:25 AM<br>
+a0_NLBE_SmooDem, 9 CM loops, last modified 2016/07/08 09:58:55 AM<br>
+a0_OldDem, 7 CM loops, last modified 2016/07/08 09:59:36 AM<br>
+a0_SmooDem, 11 CM loops, last modified 2016/07/08 09:59:17 AM<br>
+<p style='margin-top:60px'><b>These are the scenario folders which have not been updated in the past hour</b>. They are likely not currently running on the machine.</p>
+<p>Scenario Folder Name, Present CM Loop, Latest Date Modified</p>
+StephTheGreat, 0 CM loops, last modified 2016/07/07 06:16:27 PM<br>
+test1, 18 CM loops, last modified 2016/06/29 06:10:48 PM<br>
+test1_wrongCMshift, 7 CM loops, last modified 2016/06/24 10:44:39 AM<br>
+test_0705, 6 CM loops, last modified 2016/07/06 04:46:14 PM<br>
+test_0705DK, 6 CM loops, last modified 2016/07/06 04:46:08 PM<br>
+test_0705DKNLBE, 7 CM loops, last modified 2016/07/06 04:46:07 PM<br>
+test_0705NLBE, 8 CM loops, last modified 2016/07/06 04:46:09 PM<br>
+test_dem, 9 CM loops, last modified 2016/06/24 06:17:20 PM<br>
+test_demEV, 20 CM loops, last modified 2016/06/27 06:11:53 AM<br>
+test_demOldSeries, 20 CM loops, last modified 2016/06/28 10:17:53 AM<br>
+test_FYRinit, 3 CM loops, last modified 2016/06/30 09:54:53 AM<br>
+test_IntLF1, 20 CM loops, last modified 2016/06/27 07:13:16 PM<br>
+test_IntLF1_Sto, 20 CM loops, last modified 2016/06/28 09:05:01 PM<br>
+test_IntLF2, 20 CM loops, last modified 2016/06/28 07:28:06 AM<br>
+test_IntLF2_Sto, 20 CM loops, last modified 2016/06/30 05:52:44 PM<br>
+test_IntLF3, 20 CM loops, last modified 2016/06/27 03:15:24 AM<br>
+test_IntLF3_Sto, 20 CM loops, last modified 2016/06/27 06:12:14 PM<br>
+test_IntLF4, 20 CM loops, last modified 2016/06/28 12:47:49 AM<br>
+test_IntLF4_Sto, 20 CM loops, last modified 2016/06/27 01:25:36 PM<br>
+test_IntLF5, 20 CM loops, last modified 2016/06/28 01:11:51 PM<br>
+test_IntLF5_Sto, 20 CM loops, last modified 2016/06/28 11:17:51 AM<br>
+test_IntLF6, 20 CM loops, last modified 2016/06/28 01:59:44 PM<br>
+test_IntLF6_Sto, 20 CM loops, last modified 2016/06/27 11:55:34 PM<br>
+test_SlowProg, 20 CM loops, last modified 2016/07/05 08:50:11 AM<br>
