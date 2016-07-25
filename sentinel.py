@@ -111,18 +111,26 @@ def MakeCommandString(GamsVars,settings):
     GamsOf = settings[GamsVars.index("nameattrib")] + "\\"
     GamsSFile = "s_" + settings[GamsVars.index("dpy")]
     GamsGdxf = "gdx\\" + GamsOf
-    command_string_init = "gams AERESGB.gms %umul% stepsum=1 pw=255 ps=0 o=" + GamsOf + "AERESGB" + settings[1] + ".lst --of " + GamsOf + " --gdxf " + GamsGdxf + " --s_fn_base " + GamsSFile + " "
-    for i in range(numvars):
+    GamsCodeFile = settings[GamsVars.index("AERESGBfile")]
+    command_string_init = "gams "+GamsCodeFile+".gms %umul% stepsum=1 pw=255 ps=0 o="+GamsOf+"AERESGB"+settings[1]+".lst --of "+GamsOf+" --gdxf "+GamsGdxf+" --s_fn_base "+GamsSFile+" "
+    for i in range(1,numvars):
         command_string_init = command_string_init + "--" + GamsVars[i] + " " + settings[i] + " "
     command_string_init = command_string_init + "> " + GamsOf + "log.txt"
     return(command_string_init)
 
 # Initialize the launcher configs.
 configlines = list()
-configdata = open('config.dat', 'r')
-for line in configdata:
-    configlines.append(line.strip('\n'))
-configdata.close()
+
+## Remove this chunk of code because: Better to use with() in case of termination of program while file open.
+# configdata = open('config.dat', 'r')
+# for line in configdata:
+#     configlines.append(line.strip('\n'))
+# configdata.close()
+## Replace with this:
+with open('config.dat','r') as configdata:
+    for line in configdata:
+        configlines.append(line.strip('\n'))
+
 GamsVars = configlines[0].split(',')
 defaults = configlines[1].split(',')
 GUIdesc = configlines[2].split(',')
@@ -134,17 +142,10 @@ numvars = len(defaults)
 
 ### SECTION_APPLICATION ###
 
-# def updatetracker():
-#     listscenfolders = SearchDir()
-#     trackerhtml = ConstructMultistring(listscenfolders)
-
-# threading.Timer(60.0,updatetracker).start()
-
 app = Flask(__name__)
 
 @app.route("/tracker", methods=["GET"])
 def tracker():
-    # threading.Timer(60.0,tracker).start()
     listscenfolders = SearchDir()
     trackerhtml = ConstructMultistring(listscenfolders)
     return(render_template("tracker.html", trackerhtml=trackerhtml))

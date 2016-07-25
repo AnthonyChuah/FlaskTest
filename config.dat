@@ -1,0 +1,3 @@
+AERESGBfile,nameattrib,CMoutLoadSpecificFile,data_fnBase,dpy,do_interlf_shift,CMtargShift,julrep_scen,do_new_bm,do_mcpdlimit,do_stoseason
+AERESGB,JBTest,init,S1_d0,12,1,1000,0,0,0,0
+File name of main GMS file not including extension,Output folder name,Initialization file name (no extension),S1 input file name (no extension),Days per year,Non-committed change for targeting interconnector load factors,CM target procurement downward shift,PMF July 2016 scenario number,Do Balancing Mechanism,Limit running hours of plants,Enforce start of stretch storage level equal end of stretch storage level
