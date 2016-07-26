@@ -1,3 +1,3 @@
 set /P portnum="Port number? "
 
-C:\Python3\python.exe sentinel.py %portnum%
+C:/Python/python.exe sentinel.py %portnum%

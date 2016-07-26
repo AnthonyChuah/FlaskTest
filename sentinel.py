@@ -183,6 +183,19 @@ def launchmodel():
         config.write(','.join(settings) + '\n')
         config.write(','.join(GUIdesc))
     os.system("start cmd /K "+command_string)
+    # os.system("start cmd /K echo "+command_string+" >> commands.log")
+    with open('commands.log', 'a') as commands_log:
+        timenow = datetime.datetime.now()
+        commands_log.write('TIME STAMP ')
+        commands_log.write(str(timenow))
+        commands_log.write('\n')
+        commands_log.write(command_string)
+        commands_log.write('\n\n')
+    with open(GamsOf+'command.log', 'a') as command_log:
+        command_log.write('TIME STAMP ')
+        command_log.write(str(timenow))
+        command_log.write(command_string)
+        command_log.write('\n\n')
     return(render_template("launchmodel.html", command_string=command_string))
 
 @app.route("/", methods=["GET"])

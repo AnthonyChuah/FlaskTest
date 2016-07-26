@@ -1,9 +1,30 @@
 {% extends "index.html" %}
 {% block body %}
+<script>
+function prepare_for_redirect(seconds) {
+	numsecs = seconds / 1000;
+	i = numsecs;
+	setInterval(function(){i--;update_countdown(i)}, 1000);
+  setTimeout(actual_redirect, 30000);
+}
+function actual_redirect() {
+  window.location.href = '/';
+}
+function update_countdown(seconds_left) {
+  document.getElementById('redirect_time').innerHTML = seconds_left;
+}
+</script>
+
 <h2>AERESGB Web Launcher</h2>
 
 <div>
 <p>Your launch command string was: {{ command_string|safe }}</p>
 <p>Destroy! Your model has been launched. Please <a href="/">return</a> to the main menu.</p>
+<p>You will be returned to the main menu in <span id=redirect_time>30</span> seconds.</p>
+<p>Do not worry! You can see all the launch command strings in this RUN folder at /commands.log, and the scenario's launch command string in the SCENARIO folder at /SCENARIO_FOLDER/command.log.</p>
 </div>
+<script>
+  var redirect_in = 30000;
+  prepare_for_redirect(redirect_in);
+</script>
 {% endblock %}
